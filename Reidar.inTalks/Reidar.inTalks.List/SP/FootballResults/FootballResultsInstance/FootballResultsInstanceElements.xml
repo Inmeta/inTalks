@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Football results" OnQuickLaunch="TRUE" TemplateType="100" Url="Lists/Football results" Description="Football results, somewhat personalised.">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Home">A</Field>
+          <Field Name="Away">B</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">C</Field>
+          <Field Name="Away">D</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">C</Field>
+          <Field Name="Away">D</Field>
+          <Field Name="HomeScore">1</Field>
+          <Field Name="AwayScore">2</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>
