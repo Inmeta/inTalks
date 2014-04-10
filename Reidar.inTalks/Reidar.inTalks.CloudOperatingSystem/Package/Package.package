@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="e2c56da5-b87a-4f26-85f4-40b80e89b8c5" 
+        solutionId="e2c56da5-b87a-4f26-85f4-40b80e89b8c5" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="Reidar.inTalks.CloudOperatingSystem"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="a0526751-3800-4131-9493-59f63016fbd7" />
+  </features>
+</package>

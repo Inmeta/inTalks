@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="8a252e4d-4893-41e5-b140-9d71017fa6b5" 
+        solutionId="8a252e4d-4893-41e5-b140-9d71017fa6b5" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="Reidar.inTalks.List"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="4d574b6b-230a-4508-a719-86e61bc4ebab" />
+  </features>
+</package>
