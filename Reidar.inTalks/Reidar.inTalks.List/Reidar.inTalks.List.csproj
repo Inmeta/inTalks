@@ -47,7 +47,7 @@
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3fc9ed53-85bb-4179-aa99-978773361f04}</SharePointProjectItemId>
     </None>
-    <Content Include="Pages\Elements.xml" />
+    <Content Include="Pages\PagesElements.xml" />
     <Content Include="Pages\Default.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -55,7 +55,7 @@
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3684248b-9735-4274-a439-5954d8c6bed1}</SharePointProjectItemId>
     </None>
-    <Content Include="Scripts\Elements.xml" />
+    <Content Include="Scripts\ScriptsElements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -66,14 +66,14 @@
     <None Include="Content\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c9eda5dc-7767-42c1-a6d8-64250ffd0dbb}</SharePointProjectItemId>
     </None>
-    <Content Include="Content\Elements.xml" />
+    <Content Include="Content\PagesElements.xml" />
     <Content Include="Content\App.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\AppIcon.png">
       <OpcRelationship>manifest-icon</OpcRelationship>
     </Content>
-    <Content Include="Images\Elements.xml" />
+    <Content Include="Images\ImagesElements.xml" />
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{011287e7-ca34-453b-abba-3dc2214881ba}</SharePointProjectItemId>
     </None>
@@ -85,11 +85,11 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="Features\Feature1\Feature1.feature">
+    <None Include="Features\ListFeature\ListFeature.feature">
       <FeatureId>{4d574b6b-230a-4508-a719-86e61bc4ebab}</FeatureId>
     </None>
-    <None Include="Features\Feature1\Feature1.Template.xml">
-      <DependentUpon>Feature1.feature</DependentUpon>
+    <None Include="Features\ListFeature\ListFeature.Template.xml">
+      <DependentUpon>ListFeature.feature</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

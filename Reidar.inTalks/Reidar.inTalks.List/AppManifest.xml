@@ -7,7 +7,7 @@
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>Reidar.inTalks.List</Title>
+    <Title>Reidar inTalks - List</Title>
     <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
   </Properties>
 
