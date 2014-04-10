@@ -43,6 +43,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Scripts\clientSideRendering.js" />
     <Content Include="SP\FootballResults\FootballResultsElements.xml" />
     <Content Include="SP\FootballResults\FootballResultsInstance\FootballResultsInstanceElements.xml" />
     <Content Include="SP\FootballResults\Schema.xml" />
