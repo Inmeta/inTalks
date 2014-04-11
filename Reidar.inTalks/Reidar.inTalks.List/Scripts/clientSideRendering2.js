@@ -43,18 +43,11 @@ inTalks.clientSideRendering = (function () {
                 // but - is a good home team score good? 
                 var goodHomeScore = isGoodCountry(home)
                     || isBadCountry(away);
-                if (goodHomeScore) {
-                    if (homeScore > awayScore) {
-                        score = "<span style='color: blue'>" + score + "</span>";
-                    } else {
-                        score = "<span style='color: red'>" + score + "</span>";
-                    }
+                if ((goodHomeScore && homeScore > awayScore) 
+                        || (!goodHomeScore && homeScore < awayScore)) {
+                    score = "<span style='color: blue'>" + score + "</span><a style='padding-left:30px' href='mailto:MarioVaz.Henriques@inmeta.no?subject=muhahaha&body=Hi! I´m devastated to see that etc'>tell a friend</a>";
                 } else {
-                    if (homeScore < awayScore) {
-                        score = "<span style='color: blue'>" + score + "</span>";
-                    } else {
-                        score = "<span style='color: red'>" + score + "</span>";
-                    }
+                    score = "<span style='color: red'>" + score + "</span>";
                 }
             }
         }
