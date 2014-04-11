@@ -4,42 +4,72 @@
     <Data>
       <Rows>
         <Row>
-          <Field Name="Home">A</Field>
-          <Field Name="Away">B</Field>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Portugal</Field>
         </Row>
         <Row>
-          <Field Name="Home">C</Field>
-          <Field Name="Away">D</Field>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
         </Row>
         <Row>
-          <Field Name="Home">C</Field>
-          <Field Name="Away">D</Field>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
           <Field Name="HomeScore">1</Field>
           <Field Name="AwayScore">2</Field>
         </Row>
         <Row>
-          <Field Name="Home">C</Field>
-          <Field Name="Away">A</Field>
-          <Field Name="HomeScore">1</Field>
-          <Field Name="AwayScore">2</Field>
+          <Field Name="Home">England</Field>
+          <Field Name="Away">Spain</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
         </Row>
         <Row>
-          <Field Name="Home">A</Field>
-          <Field Name="Away">D</Field>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
           <Field Name="HomeScore">2</Field>
           <Field Name="AwayScore">1</Field>
         </Row>
         <Row>
-          <Field Name="Home">C</Field>
-          <Field Name="Away">A</Field>
+          <Field Name="Home">England</Field>
+          <Field Name="Away">Portugal</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
+          <Field Name="HomeScore">1</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Portugal</Field>
           <Field Name="HomeScore">2</Field>
           <Field Name="AwayScore">1</Field>
         </Row>
         <Row>
-          <Field Name="Home">A</Field>
-          <Field Name="Away">D</Field>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Portugal</Field>
           <Field Name="HomeScore">1</Field>
           <Field Name="AwayScore">2</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Germany</Field>
+          <Field Name="Away">Brazil</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Germany</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Angola</Field>
+          <Field Name="Away">Portugal</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
         </Row>
       </Rows>
     </Data>

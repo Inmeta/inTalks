@@ -76,7 +76,7 @@
     <None Include="Content\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c9eda5dc-7767-42c1-a6d8-64250ffd0dbb}</SharePointProjectItemId>
     </None>
-    <Content Include="Content\PagesElements.xml" />
+    <Content Include="Content\ContentElements.xml" />
     <Content Include="Content\App.css" />
   </ItemGroup>
   <ItemGroup>
