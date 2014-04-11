@@ -65,6 +65,15 @@ inTalks.clientSideRendering = (function () {
 })();
 
 (function () {
+    //var oc = {
+    //    BaseViewID: 1,
+    //    ListTemplateType: 100
+    //};
+    //oc.Templates = {
+    //    Header: "<div id='accordion' class='inmeta-demo-header'>",
+    //    Item: getDemoHtml,
+    //    Footer: "</div>"
+    //};
     var oc = {};
     oc.Templates = {};
     oc.Templates.Fields = {
