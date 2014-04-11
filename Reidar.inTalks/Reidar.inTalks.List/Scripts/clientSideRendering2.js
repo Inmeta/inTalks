@@ -22,12 +22,7 @@ inTalks.clientSideRendering = (function () {
         return false;
     }
     function colorizeCountry(country) {
-        if (isBadCountry(country)) {
-            return "<span style='color:red'>" + country + "</span>";
-        } else if (isGoodCountry(country)) {
-            return "<span style='color:blue'>" + country + "</span>";
-        }
-        return country;
+        return "<img src='../../Images/" + country + ".png' alt='" + country+ "' />";
     }
     function getMatchHtml(ctx) {
 
@@ -63,7 +58,7 @@ inTalks.clientSideRendering = (function () {
                 }
             }
         }
-        return "<div><span style='float:left; width:150px;'>" + homeHtml + " - " + awayHtml + "</span><span>" + score + "</span></div>";
+        return "<div><span style='float:left; width:60px;'>" + homeHtml + " - " + awayHtml + "</span><span>" + score + "</span></div>";
     }
     return {
         getMatchHtml: getMatchHtml
