@@ -28,7 +28,7 @@ inTalks.oData = (function () {
         $("<img>", { "src": "/_layouts/images/GEARS_AN.GIF" }).appendTo("#responseDiv");
 
         // begin work to call across network
-        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/Web/Lists"; // /GetByTitle('Customers')/Items?$select=Title,FirstName,WorkPhone";
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/Web/Lists";
 
         // execute AJAX request 
         var requestHeaders = {
