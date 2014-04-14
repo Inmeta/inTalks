@@ -34,7 +34,7 @@
             <!-- The following content will be replaced with the user name when you run the app - see App.js -->
             initializing...
         </p>
-        <div id="responseDiv">reply</div>
+        <div id="responseDiv">OData response may, or may not, appear here</div>
         <p>
             <input type="button" value="dirr" onclick="inTalks.oData.dir();" />
         </p>
