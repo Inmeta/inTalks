@@ -43,6 +43,13 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Images\Angola.png" />
+    <Content Include="Images\Brazil.png" />
+    <Content Include="Images\England.png" />
+    <Content Include="Images\Germany.png" />
+    <Content Include="Images\Portugal.png" />
+    <Content Include="Images\Spain.png" />
+    <Content Include="Scripts\inTalks2.js" />
     <Content Include="SP\Football\FootballElements.xml" />
     <Content Include="SP\Football\FootballInstance\FootballInstanceElements.xml" />
     <Content Include="SP\Football\Schema.xml" />

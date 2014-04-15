@@ -3,21 +3,28 @@
 if (!inTalks["oData"]) {
     inTalks.oData = {};
 }
-inTalks.oData.cos = (function () {
+inTalks.oData.football = (function () {
     'use strict';
 
-    function weGotLucky(data) {
+    function foundMatches(data) {
         $("#responseDiv").empty();
 
         var odataResults = data.d.results;
 
-        $("<h2>").html("Lists in this site").appendTo("#results");
+        $("<h2>").html("Football matches").appendTo("#results");
+
+        console.log(data);
+        console.log(odataResults);
 
         var ul = $("<ul>");
         // $("<li>").html("at least ONE item").appendTo(ul);
 
         for (var i = 0; i < odataResults.length; i++) {
-            $("<li>").html(odataResults[i].Title).appendTo(ul);
+            var home = odataResults[i].Home;
+            var away = odataResults[i].Away;
+            var homeScore = odataResults[i].HomeScore;
+            var awayScore = odataResults[i].AwayScore;
+            $("<li>").html("<span style='float:left; width:180px'><img src='../images/" + home + ".png' alt='" + home + "' /> <img src='../images/" + away + ".png' alt='" + away + "' /> " + home + " - " + away + "</span>" + homeScore + " - " + awayScore).appendTo(ul);
         }
 
         ul.appendTo("#responseDiv");
@@ -27,13 +34,13 @@ inTalks.oData.cos = (function () {
         $("#responseDiv").text("ERROR: " + JSON.stringify(err));
     }
 
-    function dir() {
+    function readMatches() {
         // clear resultsArea and add spinning gears icon
         $("#responseDiv").empty();
         $("<img>", { "src": "/_layouts/images/GEARS_AN.GIF" }).appendTo("#responseDiv");
 
         // begin work to call across network
-        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/Web/Lists";
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/Web/Lists/getByTitle('Football')/items";
 
         // execute AJAX request 
         var requestHeaders = {
@@ -42,11 +49,11 @@ inTalks.oData.cos = (function () {
         $.ajax({
             url: requestUri,
             headers: requestHeaders,
-            success: weGotLucky,
+            success: foundMatches,
             error: onError
         });
     }
     return {
-        dir: dir
+        readMatches: readMatches
     };
 })();

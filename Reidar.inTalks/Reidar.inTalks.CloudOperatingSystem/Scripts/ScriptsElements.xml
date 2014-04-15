@@ -7,5 +7,6 @@
     <File Path="Scripts\jquery-1.9.1.js" Url="Scripts/jquery-1.9.1.js" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-1.9.1.intellisense.js" Url="Scripts/jquery-1.9.1.intellisense.js" ReplaceContent="TRUE" />
     <File Path="Scripts\inTalks.js" Url="Scripts/inTalks.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\inTalks2.js" Url="Scripts/inTalks2.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

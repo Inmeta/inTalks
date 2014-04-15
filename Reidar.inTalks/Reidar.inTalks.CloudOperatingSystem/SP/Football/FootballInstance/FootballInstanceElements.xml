@@ -1,6 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <ListInstance Title="Football" OnQuickLaunch="TRUE" TemplateType="100" Url="Lists/Football" Description="Football matches">
-    
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Portugal</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
+          <Field Name="HomeScore">1</Field>
+          <Field Name="AwayScore">2</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">England</Field>
+          <Field Name="Away">Spain</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
+          <Field Name="HomeScore">2</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">England</Field>
+          <Field Name="Away">Portugal</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Portugal</Field>
+          <Field Name="Away">Spain</Field>
+          <Field Name="HomeScore">1</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Portugal</Field>
+          <Field Name="HomeScore">2</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Portugal</Field>
+          <Field Name="HomeScore">1</Field>
+          <Field Name="AwayScore">2</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Germany</Field>
+          <Field Name="Away">England</Field>
+          <Field Name="HomeScore">0</Field>
+          <Field Name="AwayScore">5</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Germany</Field>
+          <Field Name="Away">Brazil</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Spain</Field>
+          <Field Name="Away">Germany</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Angola</Field>
+          <Field Name="Away">Portugal</Field>
+          <Field Name="HomeScore">3</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Home">Angola</Field>
+          <Field Name="Away">Germany</Field>
+          <Field Name="HomeScore">2</Field>
+          <Field Name="AwayScore">1</Field>
+        </Row>
+      </Rows>
+    </Data>
   </ListInstance>
 </Elements>
