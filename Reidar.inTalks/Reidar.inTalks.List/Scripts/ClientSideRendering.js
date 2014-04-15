@@ -1,67 +1,87 @@
 ﻿var inTalks = window.inTalks || {};
 
+inTalks.clientSideRendering = (function () {
+    "use strict";
+    // This function provides the rendering logic for home / away fields 
+    function countryFieldTemplate(ctx) {
 
+        var fieldValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
 
-//inTalks.clientSideRendering = (function () {
-//    "use strict";
-//    // This function provides the rendering logic for list view 
-//    function demoFieldTemplate(ctx) {
+        if (isBadCountry(fieldValue)) {
+            return "<span style='color: red'>" + fieldValue + "</span>";
+        }
+        if (isGoodCountry(fieldValue)) {
+            return "<span style='color: blue'>" + fieldValue + "</span>";
+        }
+        return fieldValue;
+    }
+    function isBadCountry(country) {
+        if (country === "Portugal" || country === "Brazil")
+            return true;
+        return false;
+    }
+    function isGoodCountry(country) {
+        if (country === "Spain")
+            return true;
+        return false;
+    }
+    function isInterestingScore(ctx) {
+        var country = ctx.CurrentItem.Home;
+        if (isBadCountry(country) || isGoodCountry(country))
+            return true;
+        country = ctx.CurrentItem.Away;
+        if (isBadCountry(country) || isGoodCountry(country))
+            return true;
+        return false;
+    }
+    function prettyScoreFieldTemplate(ctx) {
 
-//        var fieldValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
+        if (!isInterestingScore(ctx))
+            return ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
 
-//        return "<span style='color: #f00'>" + fieldValue + "</span>";
-//    }
-//    return {
-//        demoFieldTemplate: demoFieldTemplate
-//    }
-//})();
+        var fieldValue = ctx.CurrentItem[ctx.CurrentFieldSchema.Name];
 
+        // we now know that at least one of the teams is an interesting country
+        // but - is a good home team score good? 
+        var goodHomeScore = isGoodCountry(ctx.CurrentItem.Home)
+            || isBadCountry(ctx.CurrentItem.Away);  
 
-//(function () {
-//    "use strict";
+        var homeScore = ctx.CurrentItem.HomeScore;
+        var awayScore = ctx.CurrentItem.AwayScore;
 
-//    // Create object that have the context information about the field that we want to change it's output render  
-//    var demoFieldContext = {};
-//    demoFieldContext.Templates = {};
-//    demoFieldContext.Templates.Fields = {
-//        // Apply the new rendering for Home field on List View 
-//        "Away": { "View": inTalks.clientSideRendering.demoFieldTemplate }
-//    };
+        if (homeScore === awayScore)
+            return fieldValue;
 
-//    //SPClientTemplates.TemplateManager.RegisterTemplateOverrides(demoFieldContext);
-
-//})();
+        if ((goodHomeScore && homeScore > awayScore)
+            || (!goodHomeScore && homeScore < awayScore))
+            return "<span style='color: blue'>" + fieldValue + "</span>";
+        return "<span style='color: red'>" + fieldValue + "</span>";
+    }
+    return {
+        prettyCountryFieldTemplate: countryFieldTemplate,
+        prettyHomeScoreFieldTemplate: prettyScoreFieldTemplate,
+        prettyAwayScoreFieldTemplate: prettyScoreFieldTemplate
+    }
+})();
 
 (function () {
-    var oc = {
-        BaseViewID: 1,
-        ListTemplateType: 100
-    };
+    //var oc = {
+    //    BaseViewID: 1,
+    //    ListTemplateType: 100
+    //};
     //oc.Templates = {
     //    Header: "<div id='accordion' class='inmeta-demo-header'>",
     //    Item: getDemoHtml,
     //    Footer: "</div>"
     //};
+    var oc = {};
     oc.Templates = {};
     oc.Templates.Fields = {
-        "Away": { "View": getDemoHtml }
-        //"Title": { "View": getDemoHtml }
-};
+        "Away": { "View": inTalks.clientSideRendering.prettyCountryFieldTemplate },
+        "Home": { "View": inTalks.clientSideRendering.prettyCountryFieldTemplate },
+        "HomeScore": { "View": inTalks.clientSideRendering.prettyHomeScoreFieldTemplate },
+        "AwayScore": { "View": inTalks.clientSideRendering.prettyAwayScoreFieldTemplate }
+    };
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(oc);
 })();
 
-function getDemoHtml(ctx) {
-    //var home = ctx.CurrentItem.Title;
-    var home = ctx.CurrentItem.Title;
-    var away = ctx.CurrentItem.Away;
-    var homeScore = ctx.CurrentItem.HomeScore;
-    var awayScore = ctx.CurrentItem.AwayScore;
-    console.log("home " + home + " away " + away + ": " + homeScore + " - " + awayScore);
-    if ((home === 'A' && homeScore > awayScore) || (away === 'A' && homeScore < awayScore)) {
-        return "<span style='color: green'>" + away + "</span>";
-    }
-    if ((home === 'A' && homeScore < awayScore) || (away === 'A' && homeScore > awayScore)) {
-        return "<span style='color: red'>" + away + "</span>";
-    }
-    return away;
-}
