@@ -51,7 +51,7 @@ inTalks.clientSideRendering = (function () {
                 }
             }
         }
-        return "<div><span style='float:left; width:60px;'>" + homeHtml + " - " + awayHtml + "</span><span>" + score + "</span></div>";
+        return "<div><span style='float:left; width:175px;'>" + homeHtml + " - " + awayHtml + " " + home + " - " + away + "</span><span>" + score + "</span></div>";
     }
     return {
         getMatchHtml: getMatchHtml
