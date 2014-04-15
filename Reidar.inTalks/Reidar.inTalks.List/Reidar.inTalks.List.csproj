@@ -43,6 +43,16 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Images\Angola.png" />
+    <Content Include="Images\Brazil.png" />
+    <Content Include="Images\England.png" />
+    <Content Include="Images\Fifa.png">
+      <OpcRelationship>manifest-icon</OpcRelationship>
+    </Content>
+    <Content Include="Images\Germany.png" />
+    <Content Include="Images\Portugal.png" />
+    <Content Include="Images\Spain.png" />
+    <Content Include="Scripts\clientSideRendering2.js" />
     <Content Include="Scripts\clientSideRendering.js" />
     <Content Include="SP\FootballResults\FootballResultsElements.xml" />
     <Content Include="SP\FootballResults\FootballResultsInstance\FootballResultsInstanceElements.xml" />
@@ -76,13 +86,11 @@
     <None Include="Content\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c9eda5dc-7767-42c1-a6d8-64250ffd0dbb}</SharePointProjectItemId>
     </None>
-    <Content Include="Content\PagesElements.xml" />
+    <Content Include="Content\ContentElements.xml" />
     <Content Include="Content\App.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\AppIcon.png">
-      <OpcRelationship>manifest-icon</OpcRelationship>
-    </Content>
+    <Content Include="Images\AppIcon.png" />
     <Content Include="Images\ImagesElements.xml" />
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{011287e7-ca34-453b-abba-3dc2214881ba}</SharePointProjectItemId>
