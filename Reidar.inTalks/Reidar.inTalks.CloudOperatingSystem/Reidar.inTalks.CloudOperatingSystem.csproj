@@ -43,12 +43,21 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="SP\Football\FootballElements.xml" />
+    <Content Include="SP\Football\FootballInstance\FootballInstanceElements.xml" />
+    <Content Include="SP\Football\Schema.xml" />
     <None Include="packages.config" />
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{fb1bc0be-31d8-40bf-9549-5f4623810bfb}</SharePointProjectItemId>
     </None>
     <Content Include="Pages\PagesElements.xml" />
     <Content Include="Pages\Default.aspx" />
+    <None Include="SP\Football\FootballInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{84ad978d-751a-4a54-bfdb-150e29e6d1a0}</SharePointProjectItemId>
+    </None>
+    <None Include="SP\Football\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8018d323-bc1b-4d89-8fb5-5dfe19411bc6}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.9.1.min.map" />

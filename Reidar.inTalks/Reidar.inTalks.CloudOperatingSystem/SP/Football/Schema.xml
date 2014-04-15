@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="Football" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Football" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x01006a1b0730afbe4eb3a51898c1ca6dc14c" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{875870c8-6f1d-4d3f-a56d-1892f1438a36}" Name="Home" /><FieldRef ID="{dddceea7-e4ee-4b7e-ab22-d8878d399b0a}" Name="Away" /><FieldRef ID="{6e506995-492b-4849-8273-66e9af6d655b}" Name="HomeScore" /><FieldRef ID="{be6bce70-c41f-470c-b349-2a6096904272}" Name="AwayScore" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+      
+    <Field Name="Home" ID="{875870c8-6f1d-4d3f-a56d-1892f1438a36}" DisplayName="Home" Type="Text" Required="TRUE" /><Field Name="Away" ID="{dddceea7-e4ee-4b7e-ab22-d8878d399b0a}" DisplayName="Away" Type="Text" Required="TRUE" /><Field Name="HomeScore" ID="{6e506995-492b-4849-8273-66e9af6d655b}" DisplayName="HomeScore" Type="Number" /><Field Name="AwayScore" ID="{be6bce70-c41f-470c-b349-2a6096904272}" DisplayName="AwayScore" Type="Number" /></Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="Home" /><FieldRef Name="Away" /><FieldRef Name="HomeScore" /><FieldRef Name="AwayScore" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View><View BaseViewID="2" Name="171f56f2-dcb7-4730-85d6-c3815934eb58" DisplayName="Football results" Type="HTML" WebPartZoneID="Main" SetupPath="pages\viewpage.aspx" Url="Football results.aspx"><RowLimit>30</RowLimit><ViewFields /><Query /><Toolbar Type="Standard" /><XslLink Default="TRUE">main.xsl</XslLink><JSLink>clienttemplates.js</JSLink></View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>
