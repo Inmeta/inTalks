@@ -14,21 +14,34 @@ inTalks.oData.football = (function () {
             "X-RequestDigest": $("#__REQUESTDIGEST").val(),
             "content-type": "application/json;odata=verbose"
         }
+        var json = JSON.stringify({
+            '__metadata': { 'type': 'SP.Data.FootballListItem' },
+            'Home': home, 'Away': away, 'HomeScore': homeScore, 'AwayScore': awayScore
+        });
+        //console.log(json);
         // execute AJAX request 
         $.ajax({
             url: requestUri,
             type: "POST",
-            data:  JSON.stringify({ '__metadata': { 'type': 'SP.Data.FootballListItem' }, 
-                'Home': home, 'Away': away, 'HomeScore': homeScore, 'AwayScore': awayScore }),
+            data: json,
             contentType: "SP.Data.FootballListItem",
             headers: requestHeaders,
-            success: readMatches, // on success, refresh the list
+            success: (function() {console.log("success");}),//readMatches, // on success, refresh the list
             error: onError
         });
     }
     function addMatchInternal() {
-        addMatch("Brazil", "Angola", 7, 0);
+        //console.log('addMatchInternal');
+        var home = $('#home').val();
+        var away = $('#away').val();
+        var homeScore = $('#homeScore').val();
+        var awayScore = $('#awayScore').val();
+        addMatch(home, away, homeScore, awayScore);
         readMatches();
+        $('#home').empty();
+        $('#away').empty();
+        $('#homeScore').empty();
+        $('#awayScore').empty();
     }
 
     function foundMatches(data) {
@@ -38,11 +51,10 @@ inTalks.oData.football = (function () {
 
         $("<h2>").html("Football matches").appendTo("#results");
 
-        console.log(data);
-        console.log(odataResults);
+        //console.log(data);
+        //console.log(odataResults);
 
         var ul = $("<ul>");
-        // $("<li>").html("at least ONE item").appendTo(ul);
 
         for (var i = 0; i < odataResults.length; i++) {
             var home = odataResults[i].Home;
@@ -78,8 +90,24 @@ inTalks.oData.football = (function () {
             error: onError
         });
     }
+    function addMatchDialog() {
+
+        //Using a generic object.
+        var options = {
+            title: "Add match",
+            width: 500,
+            height: 300,
+            url: "addMatch.aspx"
+        };
+
+        SP.UI.ModalDialog.showModalDialog(options);
+    }
+
     return {
         readMatches: readMatches,
+        matchDialog: addMatchDialog,
         addMatch: addMatchInternal
     };
 })();
+
+

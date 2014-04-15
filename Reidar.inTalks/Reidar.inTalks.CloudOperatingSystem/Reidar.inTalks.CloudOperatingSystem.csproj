@@ -49,6 +49,7 @@
     <Content Include="Images\Germany.png" />
     <Content Include="Images\Portugal.png" />
     <Content Include="Images\Spain.png" />
+    <Content Include="Pages\AddMatch.aspx" />
     <Content Include="Scripts\inTalks2.js" />
     <Content Include="SP\Football\FootballElements.xml" />
     <Content Include="SP\Football\FootballInstance\FootballInstanceElements.xml" />
