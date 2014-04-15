@@ -6,6 +6,31 @@ if (!inTalks["oData"]) {
 inTalks.oData.football = (function () {
     'use strict';
 
+    function addMatch(home, away, homeScore, awayScore) {
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/Web/Lists/getByTitle('Football')/items";
+
+        var requestHeaders = {
+            "accept": "application/json;odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            "content-type": "application/json;odata=verbose"
+        }
+        // execute AJAX request 
+        $.ajax({
+            url: requestUri,
+            type: "POST",
+            data:  JSON.stringify({ '__metadata': { 'type': 'SP.Data.FootballListItem' }, 
+                'Home': home, 'Away': away, 'HomeScore': homeScore, 'AwayScore': awayScore }),
+            contentType: "SP.Data.FootballListItem",
+            headers: requestHeaders,
+            success: readMatches, // on success, refresh the list
+            error: onError
+        });
+    }
+    function addMatchInternal() {
+        addMatch("Brazil", "Angola", 7, 0);
+        readMatches();
+    }
+
     function foundMatches(data) {
         $("#responseDiv").empty();
 
@@ -54,6 +79,7 @@ inTalks.oData.football = (function () {
         });
     }
     return {
-        readMatches: readMatches
+        readMatches: readMatches,
+        addMatch: addMatchInternal
     };
 })();

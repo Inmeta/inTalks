@@ -42,6 +42,9 @@
         <p>
             <input type="button" value="football" onclick="inTalks.oData.football.readMatches();" />
         </p>
+        <p>
+            <input type="button" value="add match" onclick="inTalks.oData.football.addMatch();" />
+        </p>
     </div>
 
 </asp:Content>
