@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.List", "Reid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.CloudOperatingSystem", "Reidar.inTalks.CloudOperatingSystem\Reidar.inTalks.CloudOperatingSystem.csproj", "{6944AF85-533A-43E9-A7A1-8A99FD7F4F90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.csom", "Reidar.inTalks.csom\Reidar.inTalks.csom.csproj", "{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.csomWeb", "Reidar.inTalks.csomWeb\Reidar.inTalks.csomWeb.csproj", "{3C880662-BD56-4CEB-AF8E-93E87ACAFA74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,16 @@ Global
 		{6944AF85-533A-43E9-A7A1-8A99FD7F4F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6944AF85-533A-43E9-A7A1-8A99FD7F4F90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6944AF85-533A-43E9-A7A1-8A99FD7F4F90}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3C880662-BD56-4CEB-AF8E-93E87ACAFA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C880662-BD56-4CEB-AF8E-93E87ACAFA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C880662-BD56-4CEB-AF8E-93E87ACAFA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C880662-BD56-4CEB-AF8E-93E87ACAFA74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
