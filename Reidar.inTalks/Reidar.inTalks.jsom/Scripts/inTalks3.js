@@ -23,6 +23,9 @@ inTalks.jsom = (function () {
     var hostContext = new SP.AppContextSite(appContext, hostweburl);
 
     function createList(name) {
+        if (name === undefined || name === null || name.length === 0)
+            return;
+
         var web = appContext.get_web();
 
         // info about what we want to create
@@ -38,6 +41,7 @@ inTalks.jsom = (function () {
         // Create list 
         appContext.executeQueryAsync(function (data) {
             console.log("List created!");
+            $("<a>", {"href": "../lists/" + name}).html(name).appendTo("#links");
         }, function (sender, args) {
             console.log("ERROR");
             console.log(args.get_message());
