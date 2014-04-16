@@ -1,6 +1,8 @@
 ﻿var inTalks = window.inTalks || {};
 
 inTalks.jsom = (function () {
+    'use strict';
+
     function getQueryStringParameter(param) {
         var params = document.URL.split("?")[1].split("&");
         var strParams = "";
