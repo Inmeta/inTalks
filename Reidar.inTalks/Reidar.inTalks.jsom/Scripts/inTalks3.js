@@ -21,11 +21,13 @@ inTalks.jsom = (function () {
 
     var appContext = new SP.ClientContext.get_current();
     var hostContext = new SP.AppContextSite(appContext, hostweburl);
+    var lastList = "";
 
-    function createList(name) {
+    function createList() {
+        var name = $("#inputName").val();
         if (name === undefined || name === null || name.length === 0)
             return;
-
+        console.log(name);
         var web = appContext.get_web();
 
         // info about what we want to create
@@ -41,13 +43,37 @@ inTalks.jsom = (function () {
         // Create list 
         appContext.executeQueryAsync(function (data) {
             console.log("List created!");
-            $("<a>", {"href": "../lists/" + name}).html(name).appendTo("#links");
-        }, function (sender, args) {
-            console.log("ERROR");
-            console.log(args.get_message());
+            $("<a>", { "href": "../lists/" + name }).html(name).appendTo("#links");
+            $("<br>").appendTo("#links");
+            lastList = name;
+        }, function (err) {
+            console.log("ERROR" + err);
         });
     }
+    function addAnnouncement() {
+        var subject = $("#inputName").val();
+        if (lastList === undefined || lastList === null || lastList.length === 0)
+            return;
+        console.log(subject);
+
+        var web = appContext.get_web();
+        var list = web.get_lists().getByTitle(lastList);
+        var lici = new SP.ListItemCreationInformation();
+
+        var li = list.addItem(lici);
+        li.set_item("Title", subject);
+        li.set_item("Body", "ignored for this demo");
+        li.update();
+        appContext.load(li);
+        appContext.executeQueryAsync(function (data) {
+                console.log("Inserted");
+            },
+            function (data) {
+                console.log("ERR" + data);
+            });
+    }
     return {
-        createList: createList
+        createList: createList,
+        addAnnouncement: addAnnouncement
     }
 })();
