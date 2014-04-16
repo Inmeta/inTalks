@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
-     Name="ReidarinTalksOData"
-     ProductID="{fb1bc0be-31d8-40bf-9549-5f4623810bfb}"
+     Name="ReidarinTalksAzurePoint"
+     ProductID="{a4084c08-789d-4a9f-ba5c-dce72d689b65}"
      Version="1.0.0.0"
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>inTalks OData demo</Title>
-    <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
+    <Title>Reidar.inTalks.AzurePoint</Title>
+    <StartPage>~remoteAppUrl/?{StandardTokens}</StartPage>
   </Properties>
 
   <AppPrincipal>
-    <Internal />
+    <RemoteWebApplication ClientId="*" />
   </AppPrincipal>
-
-
 </App>

@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.List", "Reidar.inTalks.List\Reidar.inTalks.List.csproj", "{2267E996-6BCB-45A9-9B76-1E2807AA9346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.CloudOperatingSystem", "Reidar.inTalks.CloudOperatingSystem\Reidar.inTalks.CloudOperatingSystem.csproj", "{6944AF85-533A-43E9-A7A1-8A99FD7F4F90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.OData", "Reidar.inTalks.CloudOperatingSystem\Reidar.inTalks.OData.csproj", "{6944AF85-533A-43E9-A7A1-8A99FD7F4F90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reidar.inTalks.csom", "Reidar.inTalks.csom\Reidar.inTalks.csom.csproj", "{9CCB601E-456B-4D4C-ADA4-30842CFB93B3}"
 EndProject
