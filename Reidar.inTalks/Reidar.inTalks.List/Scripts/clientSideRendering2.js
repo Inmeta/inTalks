@@ -21,7 +21,7 @@ inTalks.clientSideRendering = (function () {
             return true;
         return false;
     }
-    function colorizeCountry(country) {
+    function prettifyCountry(country) {
         return "<img src='../../Images/" + country + ".png' alt='" + country+ "' />";
     }
     function getMatchHtml(ctx) {
@@ -31,8 +31,8 @@ inTalks.clientSideRendering = (function () {
         var homeScore = ctx.CurrentItem.HomeScore;
         var awayScore = ctx.CurrentItem.AwayScore;
 
-        var homeHtml = colorizeCountry(home);
-        var awayHtml = colorizeCountry(away);
+        var homeHtml = prettifyCountry(home);
+        var awayHtml = prettifyCountry(away);
 
         var score = homeScore + " - " + awayScore;
 
@@ -51,7 +51,7 @@ inTalks.clientSideRendering = (function () {
                 }
             }
         }
-        return "<div><span style='float:left; width:60px;'>" + homeHtml + " - " + awayHtml + "</span><span>" + score + "</span></div>";
+        return "<div><span style='float:left; width:175px;'>" + homeHtml + " - " + awayHtml + " " + home + " - " + away + "</span><span>" + score + "</span></div>";
     }
     return {
         getMatchHtml: getMatchHtml
@@ -62,5 +62,9 @@ inTalks.clientSideRendering = (function () {
     var oc = {};
     oc.Templates = {};
     oc.Templates.Item = inTalks.clientSideRendering.getMatchHtml;
+    //oc.Templates.Fields = {
+    //    "Away": { "View": inTalks.clientSideRendering.prettifyAwayCountry }
+    //};
     SPClientTemplates.TemplateManager.RegisterTemplateOverrides(oc);
+
 })();
