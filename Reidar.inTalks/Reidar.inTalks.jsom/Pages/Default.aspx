@@ -18,6 +18,7 @@
 
     <!-- Add your JavaScript to the following file -->
     <script type="text/javascript" src="../Scripts/App.js"></script>
+    <script type="text/javascript" src="../Scripts/inTalks3.js"></script>
 </asp:Content>
 
 <%-- The markup in the following Content element will be placed in the TitleArea of the page --%>
@@ -33,6 +34,9 @@
             <!-- The following content will be replaced with the user name when you run the app - see App.js -->
             initializing...
         </p>
+        <div>
+            <input type="button" value="create list" id="createList" onclick="inTalks.jsom.createList('test')" />
+        </div>
     </div>
 
 </asp:Content>
