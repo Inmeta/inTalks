@@ -49,7 +49,7 @@ inTalks.oData.football = (function () {
 
         var odataResults = data.d.results;
 
-        $("<h2>").html("Football matches").appendTo("#results");
+        $("<h2>").html("Football matches").appendTo("#responseDiv");
 
         //console.log(data);
         //console.log(odataResults);
