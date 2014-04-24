@@ -61,6 +61,8 @@ inTalks.clientSideRendering = (function () {
 (function () {
     var oc = {};
     oc.Templates = {};
+    oc.Templates.Header = "<hr>";
+    oc.Templates.Footer = "<hr>";
     oc.Templates.Item = inTalks.clientSideRendering.getMatchHtml;
     //oc.Templates.Fields = {
     //    "Away": { "View": inTalks.clientSideRendering.prettifyAwayCountry }
