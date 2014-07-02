@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Broadcast items" OnQuickLaunch="TRUE" TemplateType="104" Url="Lists/Broadcast" Description="Information to be broadcast">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Inmarsat</Field>
+          <Field Name="Body">Intra and extranet.</Field>
+          <Field Name="TeamMembers">Reidar, Mario, Jon, Knut</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>
