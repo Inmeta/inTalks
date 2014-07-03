@@ -8,6 +8,11 @@
           <Field Name="Body">Intra and extranet.</Field>
           <Field Name="TeamMembers">Reidar, Mario, Jon, Knut</Field>
         </Row>
+        <Row>
+          <Field Name="Title">Espire</Field>
+          <Field Name="Body">Nobody talks.</Field>
+          <Field Name="TeamMembers">Svarteper</Field>
+        </Row>
       </Rows>
     </Data>
   </ListInstance>
