@@ -4,5 +4,6 @@
     <ProjectItemFile Source="PageElements.xml" Target="Pages\" Type="ElementManifest" />
     <ProjectItemFile Source="Default.aspx" Target="Pages\" Type="ElementFile" />
     <ProjectItemFile Source="IBC.aspx" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="IBB.aspx" Target="Pages\" Type="ElementFile" />
   </Files>
 </ProjectItem>

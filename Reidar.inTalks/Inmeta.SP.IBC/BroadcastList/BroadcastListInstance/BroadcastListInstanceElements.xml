@@ -9,8 +9,26 @@
           <Field Name="TeamMembers">Reidar, Mario, Jon, Knut</Field>
         </Row>
         <Row>
+          <Field Name="Title">Santander</Field>
+          <Field Name="Body">
+            Velkommen
+            til Santander!
+            Santander er størst i Norge på bilfinansiering, og spesialister på kredittkort, forbrukslån og sparing. Santander er den 4. største finansinstitusjon i verden, og stolt sponsor av Scuderia Ferrari.
+          </Field>
+          <Field Name="TeamMembers">Reidar, Mario, Jon, Knut</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">DnB</Field>
+          <Field Name="Body">Vi er tilstede med 51 valutasorter på Oslo Lufthavn. Vi har åpent alle dager fra 05.30 til 23.00. De valutasortene du ikke får i en av våre 22 minibanker kan vi hjelpe deg ved vårt bankkontor på avgang eller ankomst. Rask hjelp og gode råd får du av våre serviceinnstilte rådgivere uansett om du er kunde i DNB eller bruker en annen bank i dag.</Field>
+          <Field Name="TeamMembers">Reidar, Mario, Jon, Knut</Field>
+        </Row>
+        <Row>
           <Field Name="Title">Espire</Field>
-          <Field Name="Body">Nobody talks.</Field>
+          <Field Name="Body">
+            Espire utvikler IKT-løsninger og tilhørende tjenester for apoteksektoren. Selskapet ble etablert som NAF-Data i 1989, men skiftet navn til Espire i begynnelsen av 2012.
+
+            Selskapet har 60 ansatte og omsetter for rundt 100 mill. kroner årlig. Espire eies av Apotekernes Hus som igjen eies av Apotekforeningen og Stiftelsen til fremme av norsk apotekfarmasi.
+          </Field>
           <Field Name="TeamMembers">Svarteper</Field>
         </Row>
       </Rows>

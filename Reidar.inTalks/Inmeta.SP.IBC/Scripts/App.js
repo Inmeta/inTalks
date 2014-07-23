@@ -1,29 +1,29 @@
 ﻿'use strict';
 
-var context = SP.ClientContext.get_current();
-var user = context.get_web().get_currentUser();
+//var context = SP.ClientContext.get_current();
+//var user = context.get_web().get_currentUser();
 
-// This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
-$(document).ready(function () {
-    getUserName();
-});
+//// This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
+//$(document).ready(function () {
+//    getUserName();
+//});
 
-// This function prepares, loads, and then executes a SharePoint query to get the current users information
-function getUserName() {
-    context.load(user);
-    context.executeQueryAsync(onGetUserNameSuccess, onGetUserNameFail);
-}
+//// This function prepares, loads, and then executes a SharePoint query to get the current users information
+//function getUserName() {
+//    context.load(user);
+//    context.executeQueryAsync(onGetUserNameSuccess, onGetUserNameFail);
+//}
 
-// This function is executed if the above call is successful
-// It replaces the contents of the 'message' element with the user name
-function onGetUserNameSuccess() {
-    $('#message').text('Hello ' + user.get_title());
-}
+//// This function is executed if the above call is successful
+//// It replaces the contents of the 'message' element with the user name
+//function onGetUserNameSuccess() {
+//    $('#message').text('Hello ' + user.get_title());
+//}
 
-// This function is executed if the above call fails
-function onGetUserNameFail(sender, args) {
-    alert('Failed to get user name. Error:' + args.get_message());
-}
+//// This function is executed if the above call fails
+//function onGetUserNameFail(sender, args) {
+//    alert('Failed to get user name. Error:' + args.get_message());
+//}
 
 var inmeta = window.inmeta || {};
 
@@ -32,6 +32,19 @@ if (!inmeta["ibc"]) {
 }
 inmeta.ibc.functions = (function () {
     'use strict';
+
+    function animateProjects(elements) {
+        setTimeout((function () {
+            var element1 = elements[0];
+            element1.toggle("slow");
+            //    element1.animate({ left: "+=50", height: "toggle" }, 5000, function () {
+            //});
+            elements = rotateArray(elements);
+            element1 = elements[0];
+            element1.toggle("slow");
+            animateProjects(elements);
+        }), 15000);
+    }
     function fillInformation(contentsElement) {
         readProjects();
         //var projects = getInformation();
@@ -69,7 +82,9 @@ inmeta.ibc.functions = (function () {
     function foundProjects(data) {
         $("#contents").empty();
 
-        var projects = /* JSON.*/ data.d.results;
+        var projects = data.d.results;
+
+        var elements = [];
 
         var outerDiv = $("<div>");
         for (var i = 0; i < projects.length; i++) {
@@ -77,10 +92,12 @@ inmeta.ibc.functions = (function () {
             var body = projects[i].Body;
             var team = projects[i].TeamMembers;
             var bodyEl = $("<p>").html(body);
-            console.log(bodyEl.html());
-            $("<div>").html("<h1>" + title + "</h1><p>" + body + "</p>").appendTo(outerDiv);
+            var element = $("<div>").html("<h1>" + title + "</h1><p>" + body + "</p>").attr("id", "proj" + i);
+            element.appendTo(outerDiv);
+            elements[i] = element;
         }
         outerDiv.appendTo($("#contents"));
+        animateInformation(elements);
     }
     function getInformation() {
         var info = [];
@@ -96,8 +113,28 @@ inmeta.ibc.functions = (function () {
         info[1] = { title: "Espire", body: "First rule of Espire: Nobody talks about Espire", team: team2 };
         return info;
     }
+    function animateInformation(elements) {
+        for (var i = 1; i < elements.length; i++) {
+            var element = elements[i];
+            element.toggle();
+            //element.animate({opacity: 0.25, left: "+=50", height: "toggle"}, 200, function () {
+            //});
+        }
+        animateProjects(elements);
+    }
+    function rotateArray(array) {
+        if (array.length < 2)
+            return array;
+        var firstElement = array[0];
+        for (var i = 0; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[array.length - 1] = firstElement;
+        return array;
+    }
     return {
         getInformation: getInformation,
-        fillInformation: fillInformation
+        fillInformation: fillInformation,
+        animateInformation: animateInformation,
     }
 })();

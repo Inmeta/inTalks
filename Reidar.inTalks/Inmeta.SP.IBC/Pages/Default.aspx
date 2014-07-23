@@ -35,6 +35,7 @@
         </p>
         <p><a href="../lists/broadcast">Information</a></p>
         <p><a href="../pages/IBC.aspx?IsDlg=1">IBC</a></p>
+        <p><a href="../pages/IBB.aspx">IBB</a></p>
     </div>
 
 </asp:Content>

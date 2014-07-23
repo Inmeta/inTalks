@@ -4,8 +4,9 @@
 <%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
 <asp:Content ContentPlaceHolderId="PlaceHolderAdditionalPageHead" runat="server">
+    <meta name="WebPartPageExpansion" content="full" />
     <SharePoint:ScriptLink name="sp.js" runat="server" OnDemand="true" LoadAfterUI="true" Localizable="false" />
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
     <style type="text/css">
         #contents {
             background-color: #111;
@@ -40,11 +41,13 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
-    <div style="background-color:#111">
+    <table style="background-color:#111;height:1080px;width:100%;vertical-align:top" id="everything">
+        <tr><td style="height:100%;vertical-align:top">
         <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" ID="full" Title="loc:full" Visible="false" />
         <div id="contents"></div>
-        <h1>Inmarsat</h1>
-        <p>Inmarsat er et prosjekt. Ålesund. Intranett og ekstranett.</p>
-                <input type="button" value="dirr" onclick="inmeta.ibc.functions.fillInformation($('#contents'));" />
-    </div>
+
+        <input type="button" value="read projects" onclick="inmeta.ibc.functions.fillInformation($('#contents'));" />
+        <input type="button" value="animate!" onclick="inmeta.ibc.functions.animateInformation([$('#proj0'), $('#proj1'), $('#proj2'), $('#proj3')]);" />
+        </td></tr>
+    </table>
 </asp:Content>

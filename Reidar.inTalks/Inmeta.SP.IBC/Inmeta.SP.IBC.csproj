@@ -58,6 +58,7 @@
     </Content>
     <Content Include="BroadcastList\BroadcastListElements.xml" />
     <Content Include="BroadcastList\Schema.xml" />
+    <Content Include="Pages\IBB.aspx" />
     <Content Include="Pages\IBC.aspx" />
     <Content Include="Pages\PageElements.xml" />
     <Content Include="Pages\Default.aspx" />
