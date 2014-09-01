@@ -47,6 +47,7 @@
         <div id="contents"></div>
 
         <input type="button" value="read projects" onclick="inmeta.ibc.functions.fillInformation($('#contents'));" />
+        <input type="button" value="read projects 2" onclick="inmeta.ibc.functions.fillInformation2();" />
         <input type="button" value="animate!" onclick="inmeta.ibc.functions.animateInformation([$('#proj0'), $('#proj1'), $('#proj2'), $('#proj3')]);" />
         </td></tr>
     </table>

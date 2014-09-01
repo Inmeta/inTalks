@@ -33,6 +33,21 @@ if (!inmeta["ibc"]) {
 inmeta.ibc.functions = (function () {
     'use strict';
 
+    function getQueryStringParameter(param) {
+        var params = document.URL.split("?")[1].split("&");
+        var strParams = "";
+        for (var i = 0; i < params.length; i = i + 1) {
+            var singleParam = params[i].split("=");
+            if (singleParam[0] == param) {
+                return singleParam[1];
+            }
+        }
+    };
+    var hostweburl = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
+    var appweburl = decodeURIComponent(getQueryStringParameter("SPAppWebUrl"));
+    // Load the SP.RequestExecutor.js file.
+    $.getScript(hostweburl + "/_layouts/15/SP.RequestExecutor.js");
+
     function animateProjects(elements) {
         setTimeout((function () {
             var element1 = elements[0];
@@ -56,6 +71,42 @@ inmeta.ibc.functions = (function () {
         //    $("<div>").html("<h1>" + title + "</h1><p>" + body + "</p>").appendTo(outerDiv);
         //}
         //outerDiv.appendTo(contentsElement);
+    }
+    function fillInformation2() {
+        // clear resultsArea and add spinning gears icon
+        $("#contents").empty();
+        $("<img>", { "src": "/_layouts/images/GEARS_AN.GIF" }).appendTo("#contents");
+
+        var hostweburl = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
+        var appweburl = decodeURIComponent(getQueryStringParameter("SPAppWebUrl"));
+
+        var appContext = new SP.ClientContext.get_current();
+        var hostContext = new SP.AppContextSite(appContext, hostweburl);
+        //$("#contents").text("Hostweb " + hostweburl);
+
+        // begin work to call across network
+        var requestUri = hostweburl + "/_api/Web/Lists/getByTitle('Projects')/items";
+
+        // execute AJAX request 
+        //var requestHeaders = {
+        //    "accept": "application/json;odata=verbose"
+        //}
+        //$.ajax({
+        //    url: requestUri,
+        //    headers: requestHeaders,
+        //    success: foundProjects,
+        //    error: onError
+        //});
+        var executor = new SP.RequestExecutor(appweburl.toLowerCase());
+        executor.executeAsync({
+            url: appweburl +
+                "/_api/SP.AppContextSite(@target)/web/lists/getByTitle('Projects')/Items?@target='" +
+                hostweburl + "'&select=Title,Body,TeamMembers",
+            method: "GET",
+            headers: { "accept": "application/json;odata=verbose" },
+            success: foundProjects,
+            error: function (data) { console.log(data); }
+        });
     }
     function readProjects() {
         // clear resultsArea and add spinning gears icon
@@ -135,6 +186,8 @@ inmeta.ibc.functions = (function () {
     return {
         getInformation: getInformation,
         fillInformation: fillInformation,
+        fillInformation2: fillInformation2,
         animateInformation: animateInformation,
+        getQueryStringParameter: getQueryStringParameter,
     }
 })();

@@ -97,10 +97,6 @@
         </ParameterBindings>
         <ViewFields>
           
-          
-          
-          
-          
         <FieldRef Name="LinkTitleNoMenu" Explicit="TRUE"></FieldRef><FieldRef Name="Body" Explicit="TRUE"></FieldRef><FieldRef Name="Author" Explicit="TRUE"></FieldRef><FieldRef Name="Modified" Explicit="TRUE"></FieldRef><FieldRef Name="Attachments" Explicit="TRUE"></FieldRef></ViewFields>
         <RowLimit>3</RowLimit>
       </View><View BaseViewID="2" Name="cbd55d66-e575-4d4d-85c7-bcde574f7b54" DisplayName="Broadcast view" Type="HTML" WebPartZoneID="Main" SetupPath="pages\viewpage.aspx" Url="Broadcast view.aspx"><ViewFields><FieldRef Name="LinkTitleNoMenu" /><FieldRef Name="Title" /><FieldRef Name="Body" /><FieldRef Name="TeamMembers" /></ViewFields><Query /><Toolbar Type="Standard" /><XslLink Default="TRUE">main.xsl</XslLink><JSLink>clienttemplates.js</JSLink></View></Views>

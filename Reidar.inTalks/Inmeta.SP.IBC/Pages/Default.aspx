@@ -34,8 +34,14 @@
             initializing...
         </p>
         <p><a href="../lists/broadcast">Information</a></p>
-        <p><a href="../pages/IBC.aspx?IsDlg=1">IBC</a></p>
+        <p><a id="link2" href="../pages/IBC.aspx?IsDlg=1">IBC</a></p>
         <p><a href="../pages/IBB.aspx">IBB</a></p>
+        <p><a id="link">TV</a></p>
+        <input type="button" value="read projects 2" onclick="inmeta.ibc.functions.fillInformation2();" />
+        <div id="contents"></div>
     </div>
-
+    <script type="text/javascript">
+        var hostWeb1 = inmeta.ibc.functions.getQueryStringParameter("SPHostUrl");
+        $('#link').attr('href', '../pages/IBC.aspx?IsDlg=1&SPHostUrl=' + hostWeb1);
+    </script>
 </asp:Content>
